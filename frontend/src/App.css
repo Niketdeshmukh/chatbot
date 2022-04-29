@@ -1,0 +1,361 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+img {
+  border-radius: 50%;
+}
+* {
+  box-sizing: border-box;
+}
+.chatbot {
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  background: #f0f2f5;
+  animation: expand 0.4s ease;
+}
+@keyframes expand {
+  from {
+    transform: scale(0.1);
+    margin-left: 40vw;
+    margin-top: 40vh;
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.flex {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 70px;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+}
+.chatbot header {
+  background: #222;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+}
+.chatbox {
+  max-height: 500px;
+  width: 45%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  position: relative;
+}
+.chat-header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea;
+}
+.message-body img {
+  border-radius: 50%;
+  border: 1px solid #eaeaea;
+  margin-right: 6px;
+}
+.uploadStatus {
+  height: 100%;
+  background: #008800;
+  color: #fff;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+.uploadProgress {
+  border-radius: 2px;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+}
+.message-body {
+  display: flex;
+  margin-top: 10px;
+}
+.user-message {
+  width: 100%;
+  display: block;
+}
+.user-message .message {
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  background: #0982fa;
+  color: #fff;
+}
+.msg-container {
+  width: 100%;
+  float: right;
+  margin-top: 10px;
+}
+.info {
+  color: #888;
+  font-size: 12px;
+}
+.message {
+  margin-top: 5px;
+  padding: 8px 16px;
+  background: #e4e6eb;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  max-width: 350px;
+  word-wrap: break-word;
+}
+.chat-footer {
+  height: 50px;
+  box-sizing: content-box;
+  border-top: 1px solid #eaeaea;
+  width: calc(100% - 24px);
+  position: absolute;
+  bottom: 0%;
+  padding-bottom: 12px;
+  background: #fff;
+}
+.chat-body {
+  overflow-y: scroll;
+  height: 380px;
+  margin-right: -12px;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+.fileLabel {
+  padding: 0;
+  width: 40px;
+  display: block;
+  background: #e4e6eb !important;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-width: 40px;
+  border: none;
+  padding: 0 !important;
+  color: #000 !important;
+}
+.upload-button:disabled {
+  cursor: not-allowed;
+  background: #85c2ff;
+}
+h3 {
+  font-weight: normal;
+  text-align: center;
+}
+.input-message {
+  width: 100%;
+  margin-top: 10px;
+  height: 40px;
+  border: 1px solid #aaa;
+  outline: 0;
+  border-right: 0;
+  padding-left: 15px;
+  cursor: text;
+  padding-right: 15px;
+  border-top-left-radius: 50px;
+  font-size: 16px;
+  border-bottom-left-radius: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.chat-footer button {
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  border: none;
+  background: #0b82fa;
+  color: #fff;
+  font-size: 16px;
+  border-top-right-radius: 50px;
+  outline: 0;
+  border-bottom-right-radius: 50px;
+}
+form {
+  display: flex;
+  width: 100%;
+}
+.chat-footer button:hover {
+  background-color: #013c77;
+}
+.result {
+  padding: 10px;
+  width: 40%;
+  margin-left: 5%;
+}
+.result h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+}
+.chat-button {
+  height: 70px;
+  width: 180px;
+  color: #333;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-image: url("./images/chatbot.png");
+  background-size: 70px 70px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 200px;
+  cursor: pointer;
+  padding-left: 5px;
+  z-index: 10000;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+.chat-button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.chat-button .msg {
+  width: 60%;
+  line-height: 70px;
+}
+button {
+  cursor: pointer;
+}
+.file-upload-modal {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.modal-close {
+  float: right;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+  justify-content: center;
+}
+.modal-body {
+  padding: 10px;
+}
+.upload-here {
+  border: 2px dashed #aaa;
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow: auto;
+}
+input {
+  cursor: pointer;
+  border: 1px solid #eaeaea;
+}
+.upload-button {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #0982fa;
+}
+.or-center {
+  text-align: center;
+}
+.upload-here h1 {
+  font-size: 25px;
+  color: #555;
+  text-align: center;
+}
+.file-input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: #555;
+}
+.fileList li {
+  list-style: none;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  color: #555;
+  display: flex;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: center;
+  justify-content: space-between;
+}
+.fileList li svg:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+.fileList li svg {
+  height: 22px;
+  width: 22px;
+  padding: 2px;
+  border-radius: 50%;
+}
+ul {
+  padding: 0 !important;
+}
+.modal-close:hover {
+  background: #eaeaea;
+}
+.file-modal-box {
+  min-height: 100px;
+  max-width: 500px;
+  background: #fff;
+  margin: auto;
+  margin-top: 140px;
+}
+.modal-box-header {
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+.feedback {
+  font-size: 11px;
+  color: #666;
+  margin-left: 40px;
+  margin-top: 5px;
+}
+.feedback-body {
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid #aaa;
+  margin-top: 4px;
+  border-radius: 2em;
+  width: max-content;
+  display: flex;
+}
+
+.emoji {
+  height: 20px;
+  width: 20px;
+}
+.fc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+.fc:last-child {
+  margin-left: 10px;
+}
+.fc:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
