@@ -17,6 +17,7 @@ function Chatbot() {
   const [showFileModal, setFileModal] = useState(false);
   const [uploadProgress, setUploadProgress] = useState();
   const [response, setResponse] = useState([]);
+  
   const feedback = (response, index) => {
     setResponse((oldArray) => [...oldArray, { response, index }]);
   };

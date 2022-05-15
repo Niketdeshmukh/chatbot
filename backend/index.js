@@ -10,7 +10,6 @@ var cors = require("cors");
 const { PORT } = process.env;
 
 app.disable("etag");
-
 app.use(
   cors({
     origin: "http://localhost:3000",

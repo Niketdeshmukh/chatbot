@@ -5,11 +5,8 @@ const {
 } = require("uuid");
 
 const express = require("express");
-
 const router = express.Router();
-
 const multer = require("multer");
-
 var path = require("path");
 
 const storage = multer.diskStorage({
