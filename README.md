@@ -2,7 +2,6 @@
 ### These chat bot can read reply instantly to your message plus you can add file to it.
 ### Made using reactjs, express, api's.
 
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
